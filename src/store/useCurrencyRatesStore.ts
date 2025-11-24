@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import type { CurrencyRatesStore } from '../types/storeTypes.ts';
-import { DEFAULT_CURRENCY } from '../model/model.ts';
+import { DEFAULT_CURRENCY } from '../model/currencies.ts';
 
 const useCurrencyRatesStore = create<CurrencyRatesStore>((set) => ({
   baseCurrency: DEFAULT_CURRENCY,

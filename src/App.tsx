@@ -1,4 +1,5 @@
-import { CssBaseline, Container, Typography, Box } from '@mui/material'
+import { CssBaseline, Container, Typography, Box } from '@mui/material';
+import DateSelection from './components/DateSelection/DateSelection.tsx';
 
 function App() {
   return (
@@ -9,10 +10,11 @@ function App() {
           <Typography variant="h3" component="h1" gutterBottom>
             Currency Exchange Rates
           </Typography>
+          <DateSelection />
         </Box>
       </Container>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
