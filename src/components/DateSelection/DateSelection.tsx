@@ -26,6 +26,11 @@ function DateSelection() {
         format={DATE_FORMAT_UI}
         minDate={minDate}
         maxDate={today}
+        slotProps={{
+          textField: {
+            'data-testid': 'date-picker',
+          },
+        }}
       />
     </LocalizationProvider>
   );
