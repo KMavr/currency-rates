@@ -28,7 +28,9 @@ function DateSelection() {
         maxDate={today}
         slotProps={{
           textField: {
-            'data-testid': 'date-picker',
+            inputProps: {
+              'data-testid': 'date-picker',
+            },
           },
         }}
       />

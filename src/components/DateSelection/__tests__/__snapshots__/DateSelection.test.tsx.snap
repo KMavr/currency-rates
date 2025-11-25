@@ -4,7 +4,6 @@ exports[`DateSelection > should render a date picker 1`] = `
 <div>
   <div
     class="MuiFormControl-root MuiPickersTextField-root css-eqc3kq-MuiFormControl-root-MuiPickersTextField-root"
-    data-testid="date-picker"
   >
     <label
       class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined css-113d811-MuiFormLabel-root-MuiInputLabel-root"
@@ -158,6 +157,7 @@ exports[`DateSelection > should render a date picker 1`] = `
       <input
         aria-hidden="true"
         class="MuiPickersInputBase-input MuiPickersOutlinedInput-input css-31lcvl-MuiPickersInputBase-input"
+        data-testid="date-picker"
         id="_r_0_"
         tabindex="-1"
         value="01/01/2025"
