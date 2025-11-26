@@ -4,18 +4,17 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import TableSortLabel from '@mui/material/TableSortLabel';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import useCurrencyRatesStore from '../../store/useCurrencyRatesStore.ts';
 import CurrencyRateTableRow from './components/CurrencyRateTableRow/CurrencyRateTableRow.tsx';
+import useCurrencySort from './hooks/useCurrencySort.ts';
 
 function CurrencyRates() {
-  const { selectedCurrencies, rates, baseCurrency } = useCurrencyRatesStore();
-
-  const currencyRates = selectedCurrencies.map((currency) => ({
-    code: currency.toUpperCase(),
-    rate: rates[currency],
-  }));
+  const { baseCurrency } = useCurrencyRatesStore();
+  const { handleSortByCode, handleSortByRate, currencyRates, sortColumn, sortOrder } =
+    useCurrencySort();
 
   if (currencyRates.length === 0) {
     return null;
@@ -27,20 +26,30 @@ function CurrencyRates() {
         <TableHead>
           <TableRow>
             <TableCell sx={{ py: { xs: 1.5, sm: 2 } }}>
-              <Typography
-                variant="subtitle2"
-                fontWeight="600"
-                fontSize={{ xs: '0.875rem', sm: '1rem' }}>
-                Currency
-              </Typography>
+              <TableSortLabel
+                active={sortColumn === 'code'}
+                direction={sortColumn === 'code' ? sortOrder : 'asc'}
+                onClick={handleSortByCode}>
+                <Typography
+                  variant="subtitle2"
+                  fontWeight="600"
+                  fontSize={{ xs: '0.875rem', sm: '1rem' }}>
+                  Currency
+                </Typography>
+              </TableSortLabel>
             </TableCell>
             <TableCell align="right" sx={{ py: { xs: 1.5, sm: 2 } }}>
-              <Typography
-                variant="subtitle2"
-                fontWeight="600"
-                fontSize={{ xs: '0.875rem', sm: '1rem' }}>
-                Rate (1 {baseCurrency?.toUpperCase()} =)
-              </Typography>
+              <TableSortLabel
+                active={sortColumn === 'rate'}
+                direction={sortColumn === 'rate' ? sortOrder : 'asc'}
+                onClick={handleSortByRate}>
+                <Typography
+                  variant="subtitle2"
+                  fontWeight="600"
+                  fontSize={{ xs: '0.875rem', sm: '1rem' }}>
+                  Rate (1 {baseCurrency?.toUpperCase()} =)
+                </Typography>
+              </TableSortLabel>
             </TableCell>
           </TableRow>
         </TableHead>
