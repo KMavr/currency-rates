@@ -3,7 +3,7 @@ import type { CurrencyRatesStore, DayRate } from '../types/storeTypes.ts';
 import { DEFAULT_CURRENCY, DEFAULT_SELECTED_CURRENCIES } from '../model/currencies.ts';
 import { getCurrencies, getCurrencyRates } from '../services/api/currencyApi';
 import { formatCurrencies } from '../utils/formatters';
-import { calculatePreviousDates, formatDateISOString } from '../utils/dateUtils.ts';
+import { calculatePreviousDates, formatDateApi } from '../utils/dateUtils.ts';
 
 const useCurrencyRatesStore = create<CurrencyRatesStore>((set, get) => ({
   baseCurrency: DEFAULT_CURRENCY,
@@ -31,7 +31,7 @@ const useCurrencyRatesStore = create<CurrencyRatesStore>((set, get) => ({
   },
   fetchCurrencyRates: async () => {
     const { baseCurrency, selectedDate } = get();
-    const previousDates = calculatePreviousDates(selectedDate).map(formatDateISOString);
+    const previousDates = calculatePreviousDates(selectedDate).map(formatDateApi);
     const apiRequests = previousDates.map((date) => getCurrencyRates(baseCurrency, date));
     set({ loading: true, error: null });
     try {
