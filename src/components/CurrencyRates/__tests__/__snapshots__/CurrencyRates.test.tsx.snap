@@ -1,0 +1,152 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CurrencyRates > should render table with currency rates 1`] = `
+<div>
+  <div
+    class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation2 MuiTableContainer-root css-gi02lk-MuiPaper-root-MuiTableContainer-root"
+    style="--Paper-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12);"
+  >
+    <table
+      class="MuiTable-root css-1xwxv7r-MuiTable-root"
+    >
+      <thead
+        class="MuiTableHead-root css-1a7iywq-MuiTableHead-root"
+      >
+        <tr
+          class="MuiTableRow-root MuiTableRow-head css-1xtozoh-MuiTableRow-root"
+        >
+          <th
+            class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-1l1yxli-MuiTableCell-root"
+            scope="col"
+          >
+            <span
+              class="MuiButtonBase-root MuiTableSortLabel-root Mui-active MuiTableSortLabel-directionAsc css-7x9vt0-MuiButtonBase-root-MuiTableSortLabel-root"
+              role="button"
+              tabindex="0"
+            >
+              <h6
+                class="MuiTypography-root MuiTypography-subtitle2 css-1exmr16-MuiTypography-root"
+              >
+                Currency
+              </h6>
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiTableSortLabel-icon MuiTableSortLabel-iconDirectionAsc css-7ojauk-MuiSvgIcon-root-MuiTableSortLabel-icon"
+                data-testid="ArrowDownwardIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+                />
+              </svg>
+            </span>
+          </th>
+          <th
+            class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight MuiTableCell-sizeMedium css-1nfkqpv-MuiTableCell-root"
+            scope="col"
+          >
+            <span
+              class="MuiButtonBase-root MuiTableSortLabel-root MuiTableSortLabel-directionAsc css-7x9vt0-MuiButtonBase-root-MuiTableSortLabel-root"
+              role="button"
+              tabindex="0"
+            >
+              <h6
+                class="MuiTypography-root MuiTypography-subtitle2 css-1exmr16-MuiTypography-root"
+              >
+                Rate (1 
+                GBP
+                 =)
+              </h6>
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiTableSortLabel-icon MuiTableSortLabel-iconDirectionAsc css-7ojauk-MuiSvgIcon-root-MuiTableSortLabel-icon"
+                data-testid="ArrowDownwardIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+                />
+              </svg>
+            </span>
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        class="MuiTableBody-root css-gmh7jj-MuiTableBody-root"
+      >
+        <tr
+          class="MuiTableRow-root MuiTableRow-hover css-6phqnb-MuiTableRow-root"
+        >
+          <th
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-1pf4ti2-MuiTableCell-root"
+            scope="row"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-uoy0iz-MuiTypography-root"
+            >
+              EUR
+            </p>
+          </th>
+          <td
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-qs4icv-MuiTableCell-root"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-kua921-MuiTypography-root"
+            >
+              1.1400
+            </p>
+          </td>
+        </tr>
+        <tr
+          class="MuiTableRow-root MuiTableRow-hover css-6phqnb-MuiTableRow-root"
+        >
+          <th
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-1pf4ti2-MuiTableCell-root"
+            scope="row"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-uoy0iz-MuiTypography-root"
+            >
+              JPY
+            </p>
+          </th>
+          <td
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-qs4icv-MuiTableCell-root"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-kua921-MuiTypography-root"
+            >
+              205.5000
+            </p>
+          </td>
+        </tr>
+        <tr
+          class="MuiTableRow-root MuiTableRow-hover css-6phqnb-MuiTableRow-root"
+        >
+          <th
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-1pf4ti2-MuiTableCell-root"
+            scope="row"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-uoy0iz-MuiTypography-root"
+            >
+              USD
+            </p>
+          </th>
+          <td
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-qs4icv-MuiTableCell-root"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-kua921-MuiTypography-root"
+            >
+              1.3100
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;

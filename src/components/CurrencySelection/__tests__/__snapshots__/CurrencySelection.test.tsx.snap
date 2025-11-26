@@ -3,7 +3,7 @@
 exports[`CurrencySelection > should render autocomplete 1`] = `
 <div>
   <div
-    class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-kktj0f-MuiAutocomplete-root"
+    class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1tlcqt-MuiAutocomplete-root"
   >
     <div
       class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-cmpglg-MuiFormControl-root-MuiTextField-root"

@@ -7,3 +7,9 @@ export const formatCurrencies = (currencies: Record<string, string>): Currency[]
       name: value,
     }))
     .sort((a, b) => a.name.localeCompare(b.name));
+
+export const getCurrencyLabel = (currency: Currency): string =>
+  `${currency.code.toUpperCase()}${currency.name ? ` - ${currency.name}` : ''}`;
+
+export const isCurrencyEqual = (option: Currency, value: Currency): boolean =>
+  option.code === value.code;
