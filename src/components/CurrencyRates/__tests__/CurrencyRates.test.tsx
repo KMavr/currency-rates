@@ -5,9 +5,13 @@ import useCurrencyRatesStore from '../../../store/useCurrencyRatesStore';
 
 describe('CurrencyRates', () => {
   const mockRates = {
-    usd: 1.31,
-    eur: 1.14,
-    jpy: 205.5,
+    '2024-11-20': { usd: 1.31, eur: 1.14, jpy: 205.5 },
+    '2024-11-21': { usd: 1.32, eur: 1.15, jpy: 206.5 },
+    '2024-11-22': { usd: 1.33, eur: 1.16, jpy: 207.5 },
+    '2024-11-23': { usd: 1.34, eur: 1.17, jpy: 208.5 },
+    '2024-11-24': { usd: 1.35, eur: 1.18, jpy: 209.5 },
+    '2024-11-25': { usd: 1.36, eur: 1.19, jpy: 210.5 },
+    '2024-11-26': { usd: 1.37, eur: 1.2, jpy: 211.5 },
   };
 
   beforeEach(() => {
@@ -24,7 +28,13 @@ describe('CurrencyRates', () => {
     const { container } = render(<CurrencyRates />);
 
     expect(screen.getByText('Currency')).toBeInTheDocument();
-    expect(screen.getByText(/Rate \(1 GBP =\)/i)).toBeInTheDocument();
+    expect(screen.getByText('20/11/2024')).toBeInTheDocument();
+    expect(screen.getByText('21/11/2024')).toBeInTheDocument();
+    expect(screen.getByText('22/11/2024')).toBeInTheDocument();
+    expect(screen.getByText('23/11/2024')).toBeInTheDocument();
+    expect(screen.getByText('24/11/2024')).toBeInTheDocument();
+    expect(screen.getByText('25/11/2024')).toBeInTheDocument();
+    expect(screen.getByText('26/11/2024')).toBeInTheDocument();
     expect(screen.getByText('USD')).toBeInTheDocument();
     expect(screen.getByText('EUR')).toBeInTheDocument();
     expect(screen.getByText('JPY')).toBeInTheDocument();
@@ -43,14 +53,11 @@ describe('CurrencyRates', () => {
     render(<CurrencyRates />);
 
     expect(screen.getByText('1.3100')).toBeInTheDocument();
+    expect(screen.getByText('1.3700')).toBeInTheDocument();
     expect(screen.getByText('1.1400')).toBeInTheDocument();
+    expect(screen.getByText('1.2000')).toBeInTheDocument();
     expect(screen.getByText('205.5000')).toBeInTheDocument();
-  });
-
-  it('should display base currency in header', () => {
-    render(<CurrencyRates />);
-
-    expect(screen.getByText(/Rate \(1 GBP =\)/i)).toBeInTheDocument();
+    expect(screen.getByText('211.5000')).toBeInTheDocument();
   });
 
   describe('sorting', () => {
@@ -76,12 +83,12 @@ describe('CurrencyRates', () => {
       expect(rows[2]).toHaveTextContent('EUR');
     });
 
-    it('should sort by rate when rate header is clicked', async () => {
+    it('should sort by first date column when clicked', async () => {
       const user = userEvent.setup();
       const { container } = render(<CurrencyRates />);
 
-      const rateHeader = screen.getByText(/Rate \(1 GBP =\)/i);
-      await user.click(rateHeader);
+      const dateHeader = screen.getByText('20/11/2024');
+      await user.click(dateHeader);
 
       const rows = container.querySelectorAll('tbody tr');
       expect(rows[0]).toHaveTextContent('EUR');
@@ -89,13 +96,13 @@ describe('CurrencyRates', () => {
       expect(rows[2]).toHaveTextContent('JPY');
     });
 
-    it('should toggle rate sort to descending when clicked twice', async () => {
+    it('should toggle date column sort to descending when clicked twice', async () => {
       const user = userEvent.setup();
       const { container } = render(<CurrencyRates />);
 
-      const rateHeader = screen.getByText(/Rate \(1 GBP =\)/i);
-      await user.click(rateHeader);
-      await user.click(rateHeader);
+      const dateHeader = screen.getByText('20/11/2024');
+      await user.click(dateHeader);
+      await user.click(dateHeader);
 
       const rows = container.querySelectorAll('tbody tr');
       expect(rows[0]).toHaveTextContent('JPY');
@@ -110,8 +117,8 @@ describe('CurrencyRates', () => {
       const codeHeader = screen.getByText('Currency');
       await user.click(codeHeader);
 
-      const rateHeader = screen.getByText(/Rate \(1 GBP =\)/i);
-      await user.click(rateHeader);
+      const dateHeader = screen.getByText('20/11/2024');
+      await user.click(dateHeader);
 
       const rows = container.querySelectorAll('tbody tr');
       expect(rows[0]).toHaveTextContent('EUR');
@@ -131,7 +138,15 @@ describe('CurrencyRates', () => {
     it('should handle currencies with undefined rates', () => {
       useCurrencyRatesStore.setState({
         selectedCurrencies: ['usd', 'eur', 'xxx'],
-        rates: { usd: 1.31, eur: 1.14 },
+        rates: {
+          '2024-11-20': { usd: 1.31, eur: 1.14 },
+          '2024-11-21': { usd: 1.32, eur: 1.15 },
+          '2024-11-22': { usd: 1.33, eur: 1.16 },
+          '2024-11-23': { usd: 1.34, eur: 1.17 },
+          '2024-11-24': { usd: 1.35, eur: 1.18 },
+          '2024-11-25': { usd: 1.36, eur: 1.19 },
+          '2024-11-26': { usd: 1.37, eur: 1.2 },
+        },
       });
 
       render(<CurrencyRates />);
@@ -139,7 +154,8 @@ describe('CurrencyRates', () => {
       expect(screen.getByText('USD')).toBeInTheDocument();
       expect(screen.getByText('EUR')).toBeInTheDocument();
       expect(screen.getByText('XXX')).toBeInTheDocument();
-      expect(screen.getByText('-')).toBeInTheDocument();
+      const dashes = screen.getAllByText('-');
+      expect(dashes).toHaveLength(7);
     });
   });
 });

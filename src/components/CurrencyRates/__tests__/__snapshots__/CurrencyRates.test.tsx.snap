@@ -16,11 +16,11 @@ exports[`CurrencyRates > should render table with currency rates 1`] = `
           class="MuiTableRow-root MuiTableRow-head css-1xtozoh-MuiTableRow-root"
         >
           <th
-            class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-1l1yxli-MuiTableCell-root"
+            class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignCenter MuiTableCell-sizeMedium css-13or4q3-MuiTableCell-root"
             scope="col"
           >
             <span
-              class="MuiButtonBase-root MuiTableSortLabel-root Mui-active MuiTableSortLabel-directionAsc css-7x9vt0-MuiButtonBase-root-MuiTableSortLabel-root"
+              class="MuiButtonBase-root MuiTableSortLabel-root Mui-active MuiTableSortLabel-directionAsc css-bmupl-MuiButtonBase-root-MuiTableSortLabel-root"
               role="button"
               tabindex="0"
             >
@@ -43,20 +43,180 @@ exports[`CurrencyRates > should render table with currency rates 1`] = `
             </span>
           </th>
           <th
-            class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight MuiTableCell-sizeMedium css-1nfkqpv-MuiTableCell-root"
+            class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignCenter MuiTableCell-sizeMedium css-yn3fku-MuiTableCell-root"
             scope="col"
           >
             <span
-              class="MuiButtonBase-root MuiTableSortLabel-root MuiTableSortLabel-directionAsc css-7x9vt0-MuiButtonBase-root-MuiTableSortLabel-root"
+              class="MuiButtonBase-root MuiTableSortLabel-root MuiTableSortLabel-directionAsc css-bmupl-MuiButtonBase-root-MuiTableSortLabel-root"
               role="button"
               tabindex="0"
             >
               <h6
                 class="MuiTypography-root MuiTypography-subtitle2 css-1exmr16-MuiTypography-root"
               >
-                Rate (1 
-                GBP
-                 =)
+                20/11/2024
+              </h6>
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiTableSortLabel-icon MuiTableSortLabel-iconDirectionAsc css-7ojauk-MuiSvgIcon-root-MuiTableSortLabel-icon"
+                data-testid="ArrowDownwardIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+                />
+              </svg>
+            </span>
+          </th>
+          <th
+            class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignCenter MuiTableCell-sizeMedium css-yn3fku-MuiTableCell-root"
+            scope="col"
+          >
+            <span
+              class="MuiButtonBase-root MuiTableSortLabel-root MuiTableSortLabel-directionAsc css-bmupl-MuiButtonBase-root-MuiTableSortLabel-root"
+              role="button"
+              tabindex="0"
+            >
+              <h6
+                class="MuiTypography-root MuiTypography-subtitle2 css-1exmr16-MuiTypography-root"
+              >
+                21/11/2024
+              </h6>
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiTableSortLabel-icon MuiTableSortLabel-iconDirectionAsc css-7ojauk-MuiSvgIcon-root-MuiTableSortLabel-icon"
+                data-testid="ArrowDownwardIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+                />
+              </svg>
+            </span>
+          </th>
+          <th
+            class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignCenter MuiTableCell-sizeMedium css-yn3fku-MuiTableCell-root"
+            scope="col"
+          >
+            <span
+              class="MuiButtonBase-root MuiTableSortLabel-root MuiTableSortLabel-directionAsc css-bmupl-MuiButtonBase-root-MuiTableSortLabel-root"
+              role="button"
+              tabindex="0"
+            >
+              <h6
+                class="MuiTypography-root MuiTypography-subtitle2 css-1exmr16-MuiTypography-root"
+              >
+                22/11/2024
+              </h6>
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiTableSortLabel-icon MuiTableSortLabel-iconDirectionAsc css-7ojauk-MuiSvgIcon-root-MuiTableSortLabel-icon"
+                data-testid="ArrowDownwardIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+                />
+              </svg>
+            </span>
+          </th>
+          <th
+            class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignCenter MuiTableCell-sizeMedium css-yn3fku-MuiTableCell-root"
+            scope="col"
+          >
+            <span
+              class="MuiButtonBase-root MuiTableSortLabel-root MuiTableSortLabel-directionAsc css-bmupl-MuiButtonBase-root-MuiTableSortLabel-root"
+              role="button"
+              tabindex="0"
+            >
+              <h6
+                class="MuiTypography-root MuiTypography-subtitle2 css-1exmr16-MuiTypography-root"
+              >
+                23/11/2024
+              </h6>
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiTableSortLabel-icon MuiTableSortLabel-iconDirectionAsc css-7ojauk-MuiSvgIcon-root-MuiTableSortLabel-icon"
+                data-testid="ArrowDownwardIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+                />
+              </svg>
+            </span>
+          </th>
+          <th
+            class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignCenter MuiTableCell-sizeMedium css-yn3fku-MuiTableCell-root"
+            scope="col"
+          >
+            <span
+              class="MuiButtonBase-root MuiTableSortLabel-root MuiTableSortLabel-directionAsc css-bmupl-MuiButtonBase-root-MuiTableSortLabel-root"
+              role="button"
+              tabindex="0"
+            >
+              <h6
+                class="MuiTypography-root MuiTypography-subtitle2 css-1exmr16-MuiTypography-root"
+              >
+                24/11/2024
+              </h6>
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiTableSortLabel-icon MuiTableSortLabel-iconDirectionAsc css-7ojauk-MuiSvgIcon-root-MuiTableSortLabel-icon"
+                data-testid="ArrowDownwardIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+                />
+              </svg>
+            </span>
+          </th>
+          <th
+            class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignCenter MuiTableCell-sizeMedium css-yn3fku-MuiTableCell-root"
+            scope="col"
+          >
+            <span
+              class="MuiButtonBase-root MuiTableSortLabel-root MuiTableSortLabel-directionAsc css-bmupl-MuiButtonBase-root-MuiTableSortLabel-root"
+              role="button"
+              tabindex="0"
+            >
+              <h6
+                class="MuiTypography-root MuiTypography-subtitle2 css-1exmr16-MuiTypography-root"
+              >
+                25/11/2024
+              </h6>
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiTableSortLabel-icon MuiTableSortLabel-iconDirectionAsc css-7ojauk-MuiSvgIcon-root-MuiTableSortLabel-icon"
+                data-testid="ArrowDownwardIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+                />
+              </svg>
+            </span>
+          </th>
+          <th
+            class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignCenter MuiTableCell-sizeMedium css-yn3fku-MuiTableCell-root"
+            scope="col"
+          >
+            <span
+              class="MuiButtonBase-root MuiTableSortLabel-root MuiTableSortLabel-directionAsc css-bmupl-MuiButtonBase-root-MuiTableSortLabel-root"
+              role="button"
+              tabindex="0"
+            >
+              <h6
+                class="MuiTypography-root MuiTypography-subtitle2 css-1exmr16-MuiTypography-root"
+              >
+                26/11/2024
               </h6>
               <svg
                 aria-hidden="true"
@@ -77,10 +237,10 @@ exports[`CurrencyRates > should render table with currency rates 1`] = `
         class="MuiTableBody-root css-gmh7jj-MuiTableBody-root"
       >
         <tr
-          class="MuiTableRow-root MuiTableRow-hover css-6phqnb-MuiTableRow-root"
+          class="MuiTableRow-root MuiTableRow-hover css-1xtozoh-MuiTableRow-root"
         >
           <th
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-1pf4ti2-MuiTableCell-root"
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-6lt5y7-MuiTableCell-root"
             scope="row"
           >
             <p
@@ -90,7 +250,7 @@ exports[`CurrencyRates > should render table with currency rates 1`] = `
             </p>
           </th>
           <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-qs4icv-MuiTableCell-root"
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-8sqbph-MuiTableCell-root"
           >
             <p
               class="MuiTypography-root MuiTypography-body1 css-kua921-MuiTypography-root"
@@ -98,12 +258,66 @@ exports[`CurrencyRates > should render table with currency rates 1`] = `
               1.1400
             </p>
           </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-8sqbph-MuiTableCell-root"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-kua921-MuiTypography-root"
+            >
+              1.1500
+            </p>
+          </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-8sqbph-MuiTableCell-root"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-kua921-MuiTypography-root"
+            >
+              1.1600
+            </p>
+          </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-8sqbph-MuiTableCell-root"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-kua921-MuiTypography-root"
+            >
+              1.1700
+            </p>
+          </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-8sqbph-MuiTableCell-root"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-kua921-MuiTypography-root"
+            >
+              1.1800
+            </p>
+          </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-8sqbph-MuiTableCell-root"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-kua921-MuiTypography-root"
+            >
+              1.1900
+            </p>
+          </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-8sqbph-MuiTableCell-root"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-kua921-MuiTypography-root"
+            >
+              1.2000
+            </p>
+          </td>
         </tr>
         <tr
-          class="MuiTableRow-root MuiTableRow-hover css-6phqnb-MuiTableRow-root"
+          class="MuiTableRow-root MuiTableRow-hover css-1xtozoh-MuiTableRow-root"
         >
           <th
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-1pf4ti2-MuiTableCell-root"
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-6lt5y7-MuiTableCell-root"
             scope="row"
           >
             <p
@@ -113,7 +327,7 @@ exports[`CurrencyRates > should render table with currency rates 1`] = `
             </p>
           </th>
           <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-qs4icv-MuiTableCell-root"
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-8sqbph-MuiTableCell-root"
           >
             <p
               class="MuiTypography-root MuiTypography-body1 css-kua921-MuiTypography-root"
@@ -121,12 +335,66 @@ exports[`CurrencyRates > should render table with currency rates 1`] = `
               205.5000
             </p>
           </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-8sqbph-MuiTableCell-root"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-kua921-MuiTypography-root"
+            >
+              206.5000
+            </p>
+          </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-8sqbph-MuiTableCell-root"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-kua921-MuiTypography-root"
+            >
+              207.5000
+            </p>
+          </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-8sqbph-MuiTableCell-root"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-kua921-MuiTypography-root"
+            >
+              208.5000
+            </p>
+          </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-8sqbph-MuiTableCell-root"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-kua921-MuiTypography-root"
+            >
+              209.5000
+            </p>
+          </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-8sqbph-MuiTableCell-root"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-kua921-MuiTypography-root"
+            >
+              210.5000
+            </p>
+          </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-8sqbph-MuiTableCell-root"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-kua921-MuiTypography-root"
+            >
+              211.5000
+            </p>
+          </td>
         </tr>
         <tr
-          class="MuiTableRow-root MuiTableRow-hover css-6phqnb-MuiTableRow-root"
+          class="MuiTableRow-root MuiTableRow-hover css-1xtozoh-MuiTableRow-root"
         >
           <th
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-1pf4ti2-MuiTableCell-root"
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-6lt5y7-MuiTableCell-root"
             scope="row"
           >
             <p
@@ -136,12 +404,66 @@ exports[`CurrencyRates > should render table with currency rates 1`] = `
             </p>
           </th>
           <td
-            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-qs4icv-MuiTableCell-root"
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-8sqbph-MuiTableCell-root"
           >
             <p
               class="MuiTypography-root MuiTypography-body1 css-kua921-MuiTypography-root"
             >
               1.3100
+            </p>
+          </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-8sqbph-MuiTableCell-root"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-kua921-MuiTypography-root"
+            >
+              1.3200
+            </p>
+          </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-8sqbph-MuiTableCell-root"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-kua921-MuiTypography-root"
+            >
+              1.3300
+            </p>
+          </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-8sqbph-MuiTableCell-root"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-kua921-MuiTypography-root"
+            >
+              1.3400
+            </p>
+          </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-8sqbph-MuiTableCell-root"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-kua921-MuiTypography-root"
+            >
+              1.3500
+            </p>
+          </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-8sqbph-MuiTableCell-root"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-kua921-MuiTypography-root"
+            >
+              1.3600
+            </p>
+          </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-8sqbph-MuiTableCell-root"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-kua921-MuiTypography-root"
+            >
+              1.3700
             </p>
           </td>
         </tr>

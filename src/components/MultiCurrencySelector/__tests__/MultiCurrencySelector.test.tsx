@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitFor, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { vi } from 'vitest';
 import MultiCurrencySelector from '../MultiCurrencySelector';
@@ -143,8 +143,10 @@ describe('MultiCurrencySelector', () => {
     it('should fetch currency rates when baseCurrency changes', async () => {
       const { rerender } = render(<MultiCurrencySelector />);
 
-      useCurrencyRatesStore.setState({ baseCurrency: 'usd' });
-      rerender(<MultiCurrencySelector />);
+      await act(async () => {
+        useCurrencyRatesStore.setState({ baseCurrency: 'usd' });
+        rerender(<MultiCurrencySelector />);
+      });
 
       await waitFor(() => {
         expect(mockFetchCurrencyRates).toHaveBeenCalledTimes(2);
@@ -154,8 +156,10 @@ describe('MultiCurrencySelector', () => {
     it('should fetch currency rates when selectedDate changes', async () => {
       const { rerender } = render(<MultiCurrencySelector />);
 
-      useCurrencyRatesStore.setState({ selectedDate: new Date('2024-03-16') });
-      rerender(<MultiCurrencySelector />);
+      await act(async () => {
+        useCurrencyRatesStore.setState({ selectedDate: new Date('2024-03-16') });
+        rerender(<MultiCurrencySelector />);
+      });
 
       await waitFor(() => {
         expect(mockFetchCurrencyRates).toHaveBeenCalledTimes(2);
