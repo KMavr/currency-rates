@@ -44,7 +44,7 @@ describe('CurrencySelection', () => {
 
     render(<CurrencySelection />);
 
-    expect(screen.getByDisplayValue('EUR- Euro')).toBeInTheDocument();
+    expect(screen.getByDisplayValue('EUR - Euro')).toBeInTheDocument();
   });
 
   it('should handle empty currency name gracefully', () => {
