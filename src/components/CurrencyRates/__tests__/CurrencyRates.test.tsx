@@ -154,7 +154,6 @@ describe('CurrencyRates', () => {
       expect(screen.getByText('USD')).toBeInTheDocument();
       expect(screen.getByText('EUR')).toBeInTheDocument();
       expect(screen.getByText('XXX')).toBeInTheDocument();
-      // XXX currency should have 7 dashes (one for each date)
       const dashes = screen.getAllByText('-');
       expect(dashes).toHaveLength(7);
     });

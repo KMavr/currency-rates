@@ -157,7 +157,6 @@ describe('useCurrencyRatesStore', () => {
       let callCount = 0;
       vi.mocked(currencyApi.getCurrencyRates).mockImplementation(() => {
         callCount++;
-        // Fail on the 3rd and 5th calls
         if (callCount === 3 || callCount === 5) {
           return Promise.reject(new Error('API Error'));
         }
@@ -171,7 +170,6 @@ describe('useCurrencyRatesStore', () => {
 
       expect(state.loading).toBe(false);
       expect(state.error).toBe(null);
-      // Should have 5 successful dates out of 7
       const successfulDates = Object.keys(state.rates).filter(
         (date) => Object.keys(state.rates[date]).length > 0,
       );
@@ -183,13 +181,11 @@ describe('useCurrencyRatesStore', () => {
 
       const { fetchCurrencyRates } = useCurrencyRatesStore.getState();
 
-      // Since we use Promise.allSettled, complete failure won't throw but will result in empty rates
       await fetchCurrencyRates();
 
       const state = useCurrencyRatesStore.getState();
 
       expect(state.loading).toBe(false);
-      // All requests failed, so all date entries should be empty
       Object.values(state.rates).forEach((dayRate) => {
         expect(Object.keys(dayRate)).toHaveLength(0);
       });
