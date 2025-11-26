@@ -11,21 +11,22 @@ const useCurrencyRatesStore = create<CurrencyRatesStore>((set, get) => ({
   selectedDate: new Date(),
   availableCurrencies: [],
   rates: {},
-  loading: false,
+  loadingCurrencies: false,
+  loadingRates: false,
   error: null,
   setBaseCurrency: (baseCurrency) => set({ baseCurrency }),
   setSelectedCurrencies: (currencies) => set({ selectedCurrencies: currencies }),
   setDate: (date) => set({ selectedDate: date }),
   fetchAvailableCurrencies: async () => {
-    set({ loading: true, error: null });
+    set({ loadingCurrencies: true, error: null });
     try {
       const response = await getCurrencies();
       const formatted = formatCurrencies(response);
-      set({ availableCurrencies: formatted, loading: false });
+      set({ availableCurrencies: formatted, loadingCurrencies: false });
     } catch (error) {
       set({
         error: error instanceof Error ? error.message : 'Failed to fetch currencies',
-        loading: false,
+        loadingCurrencies: false,
       });
     }
   },
@@ -33,7 +34,7 @@ const useCurrencyRatesStore = create<CurrencyRatesStore>((set, get) => ({
     const { baseCurrency, selectedDate } = get();
     const previousDates = calculatePreviousDates(selectedDate).map(formatDateApi);
     const apiRequests = previousDates.map((date) => getCurrencyRates(baseCurrency, date));
-    set({ loading: true, error: null });
+    set({ loadingRates: true, error: null });
     try {
       const responses = await Promise.allSettled(apiRequests);
 
@@ -50,11 +51,11 @@ const useCurrencyRatesStore = create<CurrencyRatesStore>((set, get) => ({
         {} as Record<string, DayRate>,
       );
 
-      set({ rates, loading: false });
+      set({ rates, loadingRates: false });
     } catch (error) {
       set({
         error: error instanceof Error ? error.message : 'Failed to fetch currency rates',
-        loading: false,
+        loadingRates: false,
       });
     }
   },

@@ -2,11 +2,21 @@ import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableContainer from '@mui/material/TableContainer';
 import Paper from '@mui/material/Paper';
+import useCurrencyRatesStore from '../../store/useCurrencyRatesStore';
 import useCurrencySort from './hooks/useCurrencySort';
-import { CurrencyRateTableHeader, CurrencyRateTableRow } from './components';
+import {
+  CurrencyRatesLoadingState,
+  CurrencyRateTableHeader,
+  CurrencyRateTableRow,
+} from './components';
 
 function CurrencyRates() {
   const { handleSort, currencyRates, sortColumn, sortOrder, dates } = useCurrencySort();
+  const { loadingRates } = useCurrencyRatesStore();
+
+  if (loadingRates) {
+    return <CurrencyRatesLoadingState />;
+  }
 
   if (currencyRates.length === 0) {
     return null;

@@ -17,6 +17,7 @@ function MultiCurrencySelector() {
     selectedDate,
     baseCurrency,
     setSelectedCurrencies,
+    loadingCurrencies,
   } = useCurrencyRatesStore();
 
   useEffect(() => {
@@ -42,6 +43,7 @@ function MultiCurrencySelector() {
       limitTags={4}
       value={selectedCurrencyObjects}
       options={availableCurrencies}
+      loading={loadingCurrencies}
       getOptionLabel={getCurrencyLabel}
       open={autoCompleteOpen}
       onOpen={() =>
