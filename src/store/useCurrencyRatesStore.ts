@@ -17,6 +17,7 @@ const useCurrencyRatesStore = create<CurrencyRatesStore>((set, get) => ({
   setBaseCurrency: (baseCurrency) => set({ baseCurrency }),
   setSelectedCurrencies: (currencies) => set({ selectedCurrencies: currencies }),
   setDate: (date) => set({ selectedDate: date }),
+  clearError: () => set({ error: null }),
   fetchAvailableCurrencies: async () => {
     set({ loadingCurrencies: true, error: null });
     try {

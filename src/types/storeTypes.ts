@@ -14,6 +14,7 @@ export interface CurrencyRatesStore {
   setBaseCurrency: (baseCurrency: string) => void;
   setSelectedCurrencies: (currencies: string[]) => void;
   setDate: (date: Date) => void;
+  clearError: () => void;
   fetchAvailableCurrencies: () => Promise<void>;
   fetchCurrencyRates: () => Promise<void>;
 }

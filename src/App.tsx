@@ -3,6 +3,7 @@ import DateSelection from './components/DateSelection/DateSelection.tsx';
 import CurrencySelection from './components/CurrencySelection/CurrencySelection.tsx';
 import MultiCurrencySelector from './components/MultiCurrencySelector/MultiCurrencySelector.tsx';
 import CurrencyRates from './components/CurrencyRates/CurrencyRates.tsx';
+import ErrorAlert from './components/ErrorAlert/ErrorAlert.tsx';
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
           </Box>
         </Box>
       </Container>
+      <ErrorAlert />
     </>
   );
 }
