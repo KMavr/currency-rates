@@ -2,65 +2,178 @@
 
 A React application that displays exchange rates for a selected currency against other currencies over the last seven days.
 
-## Features
+## 🔗 Live Demo
 
-- View exchange rates for the last 7 days from a selected date
-- Default base currency: GBP
-- Compare against 7 currencies: USD, EUR, JPY, CHF, CAD, AUD, ZAR
-- Date selection (up to 90 days in the past)
-- Add/remove currencies from comparison (min 3, max 7)
-- Change base currency
+**[https://kmavr-currency-rates.pages.dev/](https://kmavr-currency-rates.pages.dev/)**
 
-## Technology Stack
+## ✨ Features
 
-- **React 19** - UI framework
-- **TypeScript** - Type safety
-- **Vite** - Build tool and dev server
-- **Material-UI (MUI)** - Component library
-- **ESLint** - Code linting
-- **Prettier** - Code formatting
-- **Husky** - Git hooks
-- **lint-staged** - Pre-commit linting
+- **Historical Data**: View exchange rates for the last 7 days from any selected date
+- **Date Selection**: Choose any date up to 90 days in the past
+- **Base Currency**: Change the base currency for comparison (default: GBP)
+- **Multi-Currency Comparison**: Add/remove currencies from the table
+  - Minimum: 3 currencies
+  - Maximum: 7 currencies
+  - Default currencies: USD, EUR, JPY, CHF, CAD, AUD, ZAR
+- **Sorting**: Sort currency rates by name or value
+- **Error Handling**: User-friendly error notifications with auto-dismiss
+- **Responsive Design**: Mobile-friendly interface using Material-UI
 
-## Installation
+## 🧠 Architecture Overview
 
-```bash
-npm install
-```
+- API access is isolated in services/api
+- Global application state is managed via Zustand
+- UI is built using reusable, controlled MUI components
+- Sorting logic is encapsulated inside a reusable useCurrencySort hook
+- Error handling is centralized and displayed using a global ErrorAlert component
 
-## Available Scripts
+## ⚠️ Edge Cases Handled
 
-### `npm run dev`
+- API failures and network errors
+- Invalid or unavailable historical dates (DatePicker constraints)
+- Duplicate currency prevention
+- Enforced currency selection limits (minimum 3, maximum 7)
+- Partial API failures (Promise.allSettled handles individual request failures)
 
-Runs the app in development mode.
-Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
+## 🚀 Quick Start
 
-### `npm run build`
-
-Builds the app for production to the `dist` folder.
-
-### `npm run lint`
-
-Runs ESLint to check for code issues.
-
-### `npm run preview`
-
-Previews the production build locally.
-
-## Development Setup
-
-This project uses:
-- **Husky** for Git hooks
-- **lint-staged** to run ESLint and Prettier on staged files before commit
-- ESLint configuration with React, TypeScript, and Prettier integration
-
-## API
-
-Currency data is fetched from:
-- Available currencies: `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies.json`
-- Exchange rates: `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@{yyyy-MM-dd}/v1/currencies/{currency-code}.json`
-
-## Requirements
+### Prerequisites
 
 - Node.js 18+
 - npm 9+
+
+### Installation & Running
+
+```bash
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+## 🛠️ Technology Stack
+
+### Core
+
+- **React 19** - UI framework
+- **TypeScript** - Type safety and better developer experience
+- **Vite** - Fast build tool and dev server
+
+### State Management
+
+- **Zustand** - Lightweight state management solution chosen for its minimal boilerplate, simplicity, and excellent React integration
+
+### UI/Styling
+
+- **Material-UI (MUI)** - React component library with built-in styling
+
+### Code Quality
+
+- **ESLint** - Code linting with React and TypeScript rules
+- **Prettier** - Code formatting
+- **Husky** - Git hooks for pre-commit validation
+- **lint-staged** - Run linters on staged files
+
+### Testing
+
+- **Vitest** - Fast unit test framework
+- **React Testing Library** - Component testing utilities
+- **@testing-library/user-event** - User interaction simulation
+
+## 📝 Available Scripts
+
+```bash
+# Development
+npm run dev          # Start development server
+
+# Building
+npm run build        # Build for production
+npm run preview      # Preview production build locally
+
+# Code Quality
+npm run lint         # Run ESLint
+npm test            # Run all tests
+```
+
+## 🧪 Testing
+
+The project includes comprehensive test coverage with **72 tests** across **11 test files**:
+
+- **Component Tests**: All UI components with user interactions
+- **Hook Tests**: Custom hooks like `useCurrencySort`
+- **Store Tests**: Zustand store state management
+- **API Tests**: Service layer and API client
+- **Utility Tests**: Date utilities and formatters
+
+```bash
+# Run all tests
+npm test
+
+# Run tests in watch mode (during development)
+npm run test:watch
+```
+
+## 📁 Project Structure
+
+```
+src/
+├── components/          # React components
+│   ├── CurrencyRates/   # Main currency table
+│   ├── CurrencySelection/
+│   ├── DateSelection/
+│   ├── ErrorAlert/      # Error notification
+│   └── MultiCurrencySelector/
+├── services/            # API services
+│   └── api/
+├── store/               # Zustand state management
+├── types/               # TypeScript type definitions
+├── utils/               # Utility functions
+└── model/               # Constants and models
+```
+
+## 🌐 API
+
+Currency data is fetched from the [Currency API](https://github.com/fawazahmed0/currency-api):
+
+- **Available currencies**:
+
+  ```
+  https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies.json
+  ```
+
+- **Exchange rates for a specific date**:
+  ```
+  https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@{yyyy-MM-dd}/v1/currencies/{currency-code}.json
+  ```
+
+## 🔧 Development Setup
+
+This project uses several tools to maintain code quality:
+
+### Git Hooks (Husky)
+
+Pre-commit hooks automatically run:
+
+- ESLint to check for code issues
+- Prettier to format code
+
+### Code Quality Standards
+
+- **TypeScript strict mode** for type safety
+- **ESLint rules** for React, TypeScript, and Hooks
+- **Prettier** for consistent code formatting
+- **Clean code practices** with reusable components and utilities
+
+## 📦 Deployment
+
+The application is deployed on **Cloudflare Pages**.
+
+- **Build command**: `npm run build`
+- **Output directory**: `dist`
+
+## 📄 License
+
+This project was created as part of a recruitment task for [EPS LT](https://eps.lt/en/).
