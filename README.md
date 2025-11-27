@@ -19,6 +19,22 @@ A React application that displays exchange rates for a selected currency against
 - **Error Handling**: User-friendly error notifications with auto-dismiss
 - **Responsive Design**: Mobile-friendly interface using Material-UI
 
+## 🧠 Architecture Overview
+
+- API access is isolated in services/api
+- Global application state is managed via Zustand
+- UI is built using reusable, controlled MUI components
+- Sorting logic is encapsulated inside a reusable useCurrencySort hook
+- Error handling is centralized and displayed using a global ErrorAlert component
+
+## ⚠️ Edge Cases Handled
+
+- API failures and network errors
+- Invalid or unavailable historical dates (DatePicker constraints)
+- Duplicate currency prevention
+- Enforced currency selection limits (minimum 3, maximum 7)
+- Partial API failures (Promise.allSettled handles individual request failures)
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -48,7 +64,7 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ### State Management
 
-- **Zustand** - Lightweight state management solution
+- **Zustand** - Lightweight state management solution chosen for its minimal boilerplate, simplicity, and excellent React integration
 
 ### UI/Styling
 
@@ -149,7 +165,7 @@ Pre-commit hooks automatically run:
 - **TypeScript strict mode** for type safety
 - **ESLint rules** for React, TypeScript, and Hooks
 - **Prettier** for consistent code formatting
-- **DRY, KISS, SOLID principles** applied throughout
+- **Clean code practices** with reusable components and utilities
 
 ## 📦 Deployment
 
