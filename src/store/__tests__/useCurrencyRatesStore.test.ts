@@ -12,7 +12,8 @@ describe('useCurrencyRatesStore', () => {
       selectedDate: new Date('2024-11-26'),
       availableCurrencies: [],
       rates: {},
-      loading: false,
+      loadingCurrencies: false,
+      loadingRates: false,
       error: null,
     });
     vi.clearAllMocks();
@@ -24,7 +25,8 @@ describe('useCurrencyRatesStore', () => {
 
       expect(state.baseCurrency).toBe('gbp');
       expect(state.selectedCurrencies).toEqual(['usd', 'eur', 'jpy']);
-      expect(state.loading).toBe(false);
+      expect(state.loadingCurrencies).toBe(false);
+      expect(state.loadingRates).toBe(false);
       expect(state.error).toBe(null);
     });
   });
@@ -83,7 +85,7 @@ describe('useCurrencyRatesStore', () => {
 
       const state = useCurrencyRatesStore.getState();
 
-      expect(state.loading).toBe(false);
+      expect(state.loadingCurrencies).toBe(false);
       expect(state.error).toBe(null);
       expect(state.availableCurrencies).toHaveLength(3);
       expect(state.availableCurrencies[0]).toEqual({ code: 'eur', name: 'Euro' });
@@ -98,7 +100,7 @@ describe('useCurrencyRatesStore', () => {
 
       const state = useCurrencyRatesStore.getState();
 
-      expect(state.loading).toBe(false);
+      expect(state.loadingCurrencies).toBe(false);
       expect(state.error).toBe('Network error');
       expect(state.availableCurrencies).toEqual([]);
     });
@@ -121,7 +123,7 @@ describe('useCurrencyRatesStore', () => {
 
       const state = useCurrencyRatesStore.getState();
 
-      expect(state.loading).toBe(false);
+      expect(state.loadingRates).toBe(false);
       expect(state.error).toBe(null);
       expect(Object.keys(state.rates)).toHaveLength(7);
       expect(currencyApi.getCurrencyRates).toHaveBeenCalledTimes(7);
@@ -138,11 +140,11 @@ describe('useCurrencyRatesStore', () => {
       const { fetchCurrencyRates } = useCurrencyRatesStore.getState();
       const fetchPromise = fetchCurrencyRates();
 
-      expect(useCurrencyRatesStore.getState().loading).toBe(true);
+      expect(useCurrencyRatesStore.getState().loadingRates).toBe(true);
 
       await fetchPromise;
 
-      expect(useCurrencyRatesStore.getState().loading).toBe(false);
+      expect(useCurrencyRatesStore.getState().loadingRates).toBe(false);
     });
 
     it('should handle partial failures gracefully', async () => {
@@ -168,7 +170,7 @@ describe('useCurrencyRatesStore', () => {
 
       const state = useCurrencyRatesStore.getState();
 
-      expect(state.loading).toBe(false);
+      expect(state.loadingRates).toBe(false);
       expect(state.error).toBe(null);
       const successfulDates = Object.keys(state.rates).filter(
         (date) => Object.keys(state.rates[date]).length > 0,
@@ -185,7 +187,7 @@ describe('useCurrencyRatesStore', () => {
 
       const state = useCurrencyRatesStore.getState();
 
-      expect(state.loading).toBe(false);
+      expect(state.loadingRates).toBe(false);
       Object.values(state.rates).forEach((dayRate) => {
         expect(Object.keys(dayRate)).toHaveLength(0);
       });

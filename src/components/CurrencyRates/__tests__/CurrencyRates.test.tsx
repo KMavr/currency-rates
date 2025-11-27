@@ -19,7 +19,8 @@ describe('CurrencyRates', () => {
       baseCurrency: 'gbp',
       selectedCurrencies: ['usd', 'eur', 'jpy'],
       rates: mockRates,
-      loading: false,
+      loadingCurrencies: false,
+      loadingRates: false,
       error: null,
     });
   });
@@ -47,6 +48,49 @@ describe('CurrencyRates', () => {
     const { container } = render(<CurrencyRates />);
 
     expect(container.firstChild).toBeNull();
+  });
+
+  describe('loading state', () => {
+    it('should render loading skeleton when loadingRates is true', () => {
+      useCurrencyRatesStore.setState({ loadingRates: true });
+
+      const { container } = render(<CurrencyRates />);
+
+      const skeletons = container.querySelectorAll('.MuiSkeleton-root');
+      expect(skeletons.length).toBe(32);
+
+      expect(screen.queryByText('USD')).not.toBeInTheDocument();
+      expect(screen.queryByText('EUR')).not.toBeInTheDocument();
+      expect(screen.queryByText('Currency')).not.toBeInTheDocument();
+    });
+
+    it('should render table when loadingRates is false and rates exist', () => {
+      useCurrencyRatesStore.setState({ loadingRates: false });
+
+      render(<CurrencyRates />);
+
+      expect(screen.getByText('Currency')).toBeInTheDocument();
+      expect(screen.getByText('USD')).toBeInTheDocument();
+      expect(screen.getByText('EUR')).toBeInTheDocument();
+      expect(screen.getByText('JPY')).toBeInTheDocument();
+      const { container } = render(<CurrencyRates />);
+      const skeletons = container.querySelectorAll('.MuiSkeleton-root');
+      expect(skeletons.length).toBe(0);
+    });
+
+    it('should not render loading state when loadingRates is false and no currencies selected', () => {
+      useCurrencyRatesStore.setState({
+        loadingRates: false,
+        selectedCurrencies: [],
+      });
+
+      const { container } = render(<CurrencyRates />);
+
+      expect(container.firstChild).toBeNull();
+
+      const skeletons = container.querySelectorAll('.MuiSkeleton-root');
+      expect(skeletons.length).toBe(0);
+    });
   });
 
   it('should display rates with 4 decimal places', () => {

@@ -5,8 +5,13 @@ import useCurrencyRatesStore from '../../store/useCurrencyRatesStore.ts';
 import { getCurrencyLabel, isCurrencyEqual } from '../../utils/formatters';
 
 function CurrencySelection() {
-  const { availableCurrencies, baseCurrency, setBaseCurrency, fetchAvailableCurrencies } =
-    useCurrencyRatesStore();
+  const {
+    availableCurrencies,
+    baseCurrency,
+    setBaseCurrency,
+    fetchAvailableCurrencies,
+    loadingCurrencies,
+  } = useCurrencyRatesStore();
 
   useEffect(() => {
     fetchAvailableCurrencies();
@@ -19,6 +24,7 @@ function CurrencySelection() {
       disablePortal
       options={availableCurrencies}
       value={selectedCurrency || null}
+      loading={loadingCurrencies}
       getOptionLabel={getCurrencyLabel}
       onChange={(_, newValue) => {
         if (newValue) {

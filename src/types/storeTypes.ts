@@ -8,11 +8,13 @@ export interface CurrencyRatesStore {
   selectedDate: Date;
   availableCurrencies: Currency[];
   rates: Record<string, DayRate>;
-  loading: boolean;
+  loadingCurrencies: boolean;
+  loadingRates: boolean;
   error: string | null;
   setBaseCurrency: (baseCurrency: string) => void;
   setSelectedCurrencies: (currencies: string[]) => void;
   setDate: (date: Date) => void;
+  clearError: () => void;
   fetchAvailableCurrencies: () => Promise<void>;
   fetchCurrencyRates: () => Promise<void>;
 }

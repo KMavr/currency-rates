@@ -24,7 +24,8 @@ describe('MultiCurrencySelector', () => {
       baseCurrency: 'gbp',
       selectedDate: new Date('2024-03-15'),
       rates: {},
-      loading: false,
+      loadingCurrencies: false,
+      loadingRates: false,
       error: null,
       fetchCurrencyRates: mockFetchCurrencyRates,
     });
