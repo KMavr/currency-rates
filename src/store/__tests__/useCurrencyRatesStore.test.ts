@@ -1,8 +1,19 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import useCurrencyRatesStore from '../useCurrencyRatesStore';
 import * as currencyApi from '../../services/api/currencyApi';
+import type { CurrencyRatesApiResponse } from '../../types/api';
 
 vi.mock('../../services/api/currencyApi');
+
+// Helper to create properly typed mock responses for tests
+const createMockRatesResponse = (
+  rates: Record<string, Record<string, number>>,
+): CurrencyRatesApiResponse => {
+  return {
+    date: '2024-11-26',
+    ...rates,
+  } as CurrencyRatesApiResponse;
+};
 
 describe('useCurrencyRatesStore', () => {
   beforeEach(() => {
@@ -108,13 +119,13 @@ describe('useCurrencyRatesStore', () => {
 
   describe('fetchCurrencyRates', () => {
     it('should fetch rates for 7 days and update state', async () => {
-      const mockResponse = {
+      const mockResponse = createMockRatesResponse({
         gbp: {
           usd: 1.31,
           eur: 1.14,
           jpy: 205.5,
         },
-      };
+      });
 
       vi.mocked(currencyApi.getCurrencyRates).mockResolvedValue(mockResponse);
 
@@ -134,7 +145,10 @@ describe('useCurrencyRatesStore', () => {
 
     it('should set loading state while fetching', async () => {
       vi.mocked(currencyApi.getCurrencyRates).mockImplementation(
-        () => new Promise((resolve) => setTimeout(() => resolve({ gbp: {} }), 100)),
+        () =>
+          new Promise((resolve) =>
+            setTimeout(() => resolve(createMockRatesResponse({ gbp: {} })), 100),
+          ),
       );
 
       const { fetchCurrencyRates } = useCurrencyRatesStore.getState();
@@ -148,13 +162,13 @@ describe('useCurrencyRatesStore', () => {
     });
 
     it('should handle partial failures gracefully', async () => {
-      const mockSuccessResponse = {
+      const mockSuccessResponse = createMockRatesResponse({
         gbp: {
           usd: 1.31,
           eur: 1.14,
           jpy: 205.5,
         },
-      };
+      });
 
       let callCount = 0;
       vi.mocked(currencyApi.getCurrencyRates).mockImplementation(() => {
@@ -194,7 +208,7 @@ describe('useCurrencyRatesStore', () => {
     });
 
     it('should use correct date range', async () => {
-      const mockResponse = { gbp: { usd: 1.31 } };
+      const mockResponse = createMockRatesResponse({ gbp: { usd: 1.31 } });
       vi.mocked(currencyApi.getCurrencyRates).mockResolvedValue(mockResponse);
 
       useCurrencyRatesStore.setState({

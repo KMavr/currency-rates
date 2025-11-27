@@ -6,7 +6,7 @@ import useCurrencyRatesStore from '../../store/useCurrencyRatesStore.ts';
 function ErrorAlert() {
   const { error, clearError } = useCurrencyRatesStore();
 
-  const handleClose = (_, reason?: SnackbarCloseReason) => {
+  const handleClose = (_event: unknown, reason?: SnackbarCloseReason) => {
     if (reason === 'clickaway') {
       return;
     }
