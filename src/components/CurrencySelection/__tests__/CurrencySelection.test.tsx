@@ -15,7 +15,7 @@ describe('CurrencySelection', () => {
     useCurrencyRatesStore.setState({
       availableCurrencies: [],
       baseCurrency: DEFAULT_CURRENCY,
-      loading: false,
+      loadingCurrencies: false,
       error: null,
     });
   });

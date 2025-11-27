@@ -17,11 +17,11 @@ describe('apiGet', () => {
       json: vi.fn().mockResolvedValue(mockData),
     };
 
-    global.fetch = vi.fn().mockResolvedValue(mockResponse);
+    globalThis.fetch = vi.fn().mockResolvedValue(mockResponse);
 
     const result = await apiGet(mockEndpoint);
 
-    expect(global.fetch).toHaveBeenCalledWith(expectedUrl);
+    expect(globalThis.fetch).toHaveBeenCalledWith(expectedUrl);
     expect(mockResponse.json).toHaveBeenCalled();
     expect(result).toEqual(mockData);
   });
@@ -38,7 +38,7 @@ describe('apiGet', () => {
       json: vi.fn().mockResolvedValue(mockData),
     };
 
-    global.fetch = vi.fn().mockResolvedValue(mockResponse);
+    globalThis.fetch = vi.fn().mockResolvedValue(mockResponse);
 
     const result = await apiGet<TestData>(mockEndpoint);
 
@@ -53,10 +53,10 @@ describe('apiGet', () => {
       statusText: 'Not Found',
     };
 
-    global.fetch = vi.fn().mockResolvedValue(mockResponse);
+    globalThis.fetch = vi.fn().mockResolvedValue(mockResponse);
 
     await expect(apiGet(mockEndpoint)).rejects.toThrow('API request failed: Not Found');
-    expect(global.fetch).toHaveBeenCalledWith(expectedUrl);
+    expect(globalThis.fetch).toHaveBeenCalledWith(expectedUrl);
   });
 
   it('should throw error when response has server error status', async () => {
@@ -65,16 +65,16 @@ describe('apiGet', () => {
       statusText: 'Internal Server Error',
     };
 
-    global.fetch = vi.fn().mockResolvedValue(mockResponse);
+    globalThis.fetch = vi.fn().mockResolvedValue(mockResponse);
 
     await expect(apiGet(mockEndpoint)).rejects.toThrow('API request failed: Internal Server Error');
   });
 
   it('should throw error when fetch fails', async () => {
-    global.fetch = vi.fn().mockRejectedValue(new Error('Network error'));
+    globalThis.fetch = vi.fn().mockRejectedValue(new Error('Network error'));
 
     await expect(apiGet(mockEndpoint)).rejects.toThrow('Network error');
-    expect(global.fetch).toHaveBeenCalledWith(expectedUrl);
+    expect(globalThis.fetch).toHaveBeenCalledWith(expectedUrl);
   });
 
   it('should throw error when JSON parsing fails', async () => {
@@ -83,13 +83,13 @@ describe('apiGet', () => {
       json: vi.fn().mockRejectedValue(new Error('Invalid JSON')),
     };
 
-    global.fetch = vi.fn().mockResolvedValue(mockResponse);
+    globalThis.fetch = vi.fn().mockResolvedValue(mockResponse);
 
     await expect(apiGet(mockEndpoint)).rejects.toThrow('Invalid JSON');
   });
 
   it('should handle non-Error objects in catch block', async () => {
-    global.fetch = vi.fn().mockRejectedValue('String error');
+    globalThis.fetch = vi.fn().mockRejectedValue('String error');
 
     await expect(apiGet(mockEndpoint)).rejects.toThrow('Unknown error');
   });

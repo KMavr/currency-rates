@@ -30,7 +30,7 @@ function MultiCurrencySelector() {
     selectedCurrencies.includes(code),
   );
 
-  const handleChange = (_, newValue: Currency[]) => {
+  const handleChange = (_event: unknown, newValue: Currency[]) => {
     if (newValue.length >= MIN_SELECTED_CURRENCY && newValue.length <= MAX_SELECTED_CURRENCY) {
       const codes = newValue.map(({ code }) => code);
       setSelectedCurrencies(codes);
