@@ -28,6 +28,7 @@ function DateSelection() {
         maxDate={today}
         slotProps={{
           textField: {
+            readOnly: true,
             inputProps: {
               'data-testid': 'date-picker',
             },

@@ -16,7 +16,7 @@ exports[`DateSelection > should render a date picker 1`] = `
     <div
       aria-invalid="false"
       aria-labelledby="_r_0_-label"
-      class="MuiPickersInputBase-root MuiPickersOutlinedInput-root MuiPickersInputBase-colorPrimary MuiPickersInputBase-adornedEnd css-vycme6-MuiPickersInputBase-root-MuiPickersOutlinedInput-root"
+      class="MuiPickersInputBase-root MuiPickersOutlinedInput-root Mui-readOnly MuiPickersInputBase-colorPrimary MuiPickersInputBase-adornedEnd css-vycme6-MuiPickersInputBase-root-MuiPickersOutlinedInput-root"
       role="group"
     >
       <div
@@ -34,19 +34,16 @@ exports[`DateSelection > should render a date picker 1`] = `
           <span
             aria-disabled="false"
             aria-label="Day"
-            aria-readonly="false"
+            aria-readonly="true"
             aria-valuemax="31"
             aria-valuemin="1"
             aria-valuenow="1"
             aria-valuetext="1st"
-            autocapitalize="none"
-            autocorrect="off"
             class="MuiPickersSectionList-sectionContent MuiPickersInputBase-sectionContent css-1jpopwz-MuiPickersSectionList-sectionContent-MuiPickersInputBase-sectionContent"
-            contenteditable="true"
+            contenteditable="false"
             inputmode="numeric"
             role="spinbutton"
-            spellcheck="false"
-            tabindex="0"
+            tabindex="-1"
           >
             01
           </span>
@@ -66,18 +63,15 @@ exports[`DateSelection > should render a date picker 1`] = `
           <span
             aria-disabled="false"
             aria-label="Month"
-            aria-readonly="false"
+            aria-readonly="true"
             aria-valuemax="12"
             aria-valuemin="1"
             aria-valuenow="1"
             aria-valuetext="January"
-            autocapitalize="none"
-            autocorrect="off"
             class="MuiPickersSectionList-sectionContent MuiPickersInputBase-sectionContent css-1jpopwz-MuiPickersSectionList-sectionContent-MuiPickersInputBase-sectionContent"
-            contenteditable="true"
+            contenteditable="false"
             inputmode="numeric"
             role="spinbutton"
-            spellcheck="false"
             tabindex="-1"
           >
             01
@@ -98,17 +92,14 @@ exports[`DateSelection > should render a date picker 1`] = `
           <span
             aria-disabled="false"
             aria-label="Year"
-            aria-readonly="false"
+            aria-readonly="true"
             aria-valuemax="9999"
             aria-valuemin="0"
             aria-valuenow="2025"
-            autocapitalize="none"
-            autocorrect="off"
             class="MuiPickersSectionList-sectionContent MuiPickersInputBase-sectionContent css-1jpopwz-MuiPickersSectionList-sectionContent-MuiPickersInputBase-sectionContent"
-            contenteditable="true"
+            contenteditable="false"
             inputmode="numeric"
             role="spinbutton"
-            spellcheck="false"
             tabindex="-1"
           >
             2025
@@ -159,6 +150,7 @@ exports[`DateSelection > should render a date picker 1`] = `
         class="MuiPickersInputBase-input MuiPickersOutlinedInput-input css-31lcvl-MuiPickersInputBase-input"
         data-testid="date-picker"
         id="_r_0_"
+        readonly=""
         tabindex="-1"
         value="01/01/2025"
       />
